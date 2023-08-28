@@ -3,11 +3,14 @@
 > The PipeTransfer tool is a command-line tool designed for seamless file transfer between systems using `ppng.io`. It supports three distinct modes: "send," "receive," and "infect,".
 
 # Commands 
-> **Send** : The send is pretty straighforward, it's used to send a file/folder with the command : `pipetransfer send (file/folder) (key)`
+> **Send** : The send is pretty straighforward, it's used to send a file/folder with the command : <br>
+> `pipetransfer send (file/folder) (key)`
 >
-> **Receive** : The receive command is used to receive folders with the command : `pipetransfer receive (key)`
+> **Receive** : The receive command is used to receive folders with the command : <br>
+> `pipetransfer receive (key)`
 >
-> **Infect** : This command was made specifically for malware enthusiasts, simply use the command : `pipetransfer infect (yourexe.exe) (key)` and pipetransfer will create a windows command for your file which can be used on any windows machine to download and run your exe.
+> **Infect** : This command was made specifically for malware enthusiasts, simply use the command : <br>
+> `pipetransfer infect (yourexe.exe) (key)` and pipetransfer will create a windows command for your file which can be used on any windows machine to download and run your exe.
 
 # Installation
 To install PipeTransfer simply run the command : <br>
