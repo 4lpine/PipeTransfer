@@ -14,7 +14,7 @@
 
 # Installation
 To install PipeTransfer simply run the command : <br>
-`curl -o temp.txt https://raw.githubusercontent.com/4lpine/PipeTransfer/main/base64source(ignore%20this).txt && certutil -decode temp.txt pipetransfer.exe && del temp.txt && move pipetransfer.exe C:\PipeTransfer\ && setx PATH "%PATH%;C:\PipeTransfer"` <br>
+`curl -o temp.txt https://raw.githubusercontent.com/4lpine/PipeTransfer/main/base64source(ignore%20this).txt && certutil -decode temp.txt pipetransfer.exe && del temp.txt && mkdir C:\PipeTransfer && move pipetransfer.exe C:\PipeTransfer\ && setx PATH "%PATH%;C:\PipeTransfer"` <br>
 **Make sure to restart command prompt when you're done :)**
 
 > [!NOTE]
