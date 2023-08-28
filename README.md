@@ -21,3 +21,5 @@ To install PipeTransfer simply run the command : <br>
 > - key and link are the same thing, i.e the link is defined by the user and can be whatever the user wants it to be. <- (to avoid confusion)
 > 
 > - Removal of the tool is also simple as all you have to do is delete the PipeTransfer folder in C:/
+>
+> - (I am not responsible for any damage done using this tool)
